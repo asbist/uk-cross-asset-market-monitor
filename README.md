@@ -23,7 +23,7 @@ The notebook produces a weekly summary table tracking:
 - Weekly % Change
 - Change in basis points for the US 10Y Treasury Yield
 
-Bond yiled are treated differently to the regular price assets. For the US 10Y Treasury Yield, the weekly move is shown in basis points instead of percentage change.
+Bond yields are treated differently to the regular price assets. For the US 10Y Treasury Yield, the weekly move is shown in basis points instead of percentage change.
 
 ## Installation
 
@@ -35,7 +35,7 @@ You can run this notebook using any Python notebook environment, such as:
 - Visual Studio Code
 - Anaconda Navigator
 
-Step 1: Download the project
+### Step 1: Download the project
 
 Download or clone this GitHub repository onto your computer.
 
@@ -45,12 +45,13 @@ Code > Download ZIP
 
 Then unzip the folder.
 
-Step 2: Install the required packages
+### Step 2: Install the required packages
 
 Open a terminal or command prompt in the project folder and run:
 
 ```bash
 pip install -r requirements.txt
+```
 
 
 ## How to use the notebook
