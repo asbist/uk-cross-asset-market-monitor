@@ -75,19 +75,15 @@ pip install -r requirements.txt
 First, run all cells in notebook.
 
 Then generate a weekly table by running:
+
 weekly_summary, week_start, latest_friday = create_weekly_summary_for_week("date")
 weekly_summary
 
 Use dates in this format:
 "YYYY-MM-DD"
 
-For example:
-create_weekly_summary_for_week("2026-07-01")
-
-This will create a table for the most recent completed trading week ending on or before that date.
-
 To export a weekly table to Excel run:
 export_week_to_excel("date")
 
-To export the latesst completed week run:
+To export the latest completed week run:
 export_week_to_excel()
