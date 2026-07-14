@@ -77,7 +77,7 @@ First, run all cells in the notebook.
 Then generate a weekly table by running:
 
 ```python
-weekly_summary, week_start, latest_friday = create_weekly_summary_for_week("2026-07-03")
+weekly_summary, week_start, latest_friday = create_weekly_summary_for_week("date")
 
 weekly_summary
 ```
@@ -91,7 +91,7 @@ YYYY-MM-DD
 To export a weekly table to Excel, run:
 
 ```python
-export_week_to_excel("2026-07-03")
+export_week_to_excel("date")
 ```
 
 To export the latest completed week, run:
