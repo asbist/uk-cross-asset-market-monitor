@@ -72,18 +72,30 @@ pip install -r requirements.txt
 
 ## How to use the notebook
 
-First, run all cells in notebook.
+First, run all cells in the notebook.
 
 Then generate a weekly table by running:
 
-weekly_summary, week_start, latest_friday = create_weekly_summary_for_week("date")
+```python
+weekly_summary, week_start, latest_friday = create_weekly_summary_for_week("2026-07-03")
+
 weekly_summary
+```
 
 Use dates in this format:
-"YYYY-MM-DD"
 
-To export a weekly table to Excel run:
-export_week_to_excel("date")
+```text
+YYYY-MM-DD
+```
 
-To export the latest completed week run:
+To export a weekly table to Excel, run:
+
+```python
+export_week_to_excel("2026-07-03")
+```
+
+To export the latest completed week, run:
+
+```python
 export_week_to_excel()
+```
