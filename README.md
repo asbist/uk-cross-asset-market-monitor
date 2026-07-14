@@ -1,7 +1,11 @@
 # UK Cross-Asset Market Monitor
-This project creates a weekly cross-asset summary table using Python and Yahoo Finance data. The notebook tracks major equity indicies, FX pairs, commodities, volatility, and bond yields. It calculates weekly market moves from Monday open to Friday close.
 
-## Assets covered
+This project creates a weekly cross-asset market summary using Python and Yahoo Finance data. The notebook tracks major equity indices, FX pairs, commodities, volatility, and bond yields, calculating weekly market moves from Monday open to Friday close.
+
+The project is designed to support a six-week UK market report by creating a repeatable process for monitoring cross-asset price action, identifying market themes, and exporting weekly snapshots to Excel for ongoing analysis.
+
+## Assets Covered
+
 The monitor currently tracks:
 
 - FTSE 100
@@ -13,9 +17,9 @@ The monitor currently tracks:
 - EUR/GBP
 - US 10Y Treasury Yield
 
-## What the notebook does
+## What the Notebook Does
 
-The notebook produces a weekly summary table tracking:
+The notebook produces a weekly summary table showing:
 
 - Monday Open
 - Friday Close
@@ -23,7 +27,19 @@ The notebook produces a weekly summary table tracking:
 - Weekly % Change
 - Change in basis points for the US 10Y Treasury Yield
 
-Bond yields are treated differently to the regular price assets. For the US 10Y Treasury Yield, the weekly move is shown in basis points instead of percentage change.
+Bond yields are treated differently from regular price assets. For the US 10Y Treasury Yield, the weekly move is shown in basis points rather than as a percentage change.
+
+The notebook also exports weekly snapshots to an Excel workbook, allowing a historical record of weekly market moves to build over time.
+
+## Features
+
+- Downloads market data using `yfinance`
+- Tracks weekly moves from Monday open to Friday close
+- Covers equities, FX, commodities, volatility, and bond yields
+- Calculates percentage moves for price-based assets
+- Calculates basis point moves for bond yields
+- Exports weekly market snapshots to Excel
+- Avoids duplicate weekly entries when the same week is exported more than once
 
 ## Installation
 
@@ -59,7 +75,8 @@ pip install -r requirements.txt
 First, run all cells in notebook.
 
 Then generate a weekly table by running:
-create_weekly_summary_for_week("date")
+weekly_summary, week_start, latest_friday = create_weekly_summary_for_week("date")
+weekly_summary
 
 Use dates in this format:
 "YYYY-MM-DD"
@@ -69,5 +86,8 @@ create_weekly_summary_for_week("2026-07-01")
 
 This will create a table for the most recent completed trading week ending on or before that date.
 
-To generate the latest available week run:
-create_weekly_summary_for_week()
+To export a weekly table to Excel run:
+export_week_to_excel("date")
+
+To export the latesst completed week run:
+export_week_to_excel()
